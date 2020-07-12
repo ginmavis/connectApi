@@ -1,0 +1,18 @@
+86 add thu vien
+    -   npm install redux react-router-dom react-redux
+    -   react chạy port 4000
+    -   server chạy port 3000
+    - folder utils chứa các function call api
+87 -91 : Tích hợp react - router
+91 : tích hợp redux
+92 : Su dung axios goi api 
+    -npm install axios --save
+
+    - thoi gian goi len sever se mat nhieu thoi gian hon render 
+    - ham goi axios goi len sever mat 5s
+    - hienthi render mat 1s 
+93  : dung state k dung redux (redux se ket hop sau)  
+    - dung ham componentDidMount
+    - render sẽ hiển thị 1 lần k có dữ liệu
+    - sau khi componentDidMount chạy và có setState thì sẽ 
+    được load lại 1 lần (dã có dữ liệu trong state)
