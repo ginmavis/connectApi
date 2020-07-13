@@ -21,8 +21,8 @@ const routes = [
   {
     path: "/product/add",
     exact: false,
-    main: () => {
-      return <ProductActionPage></ProductActionPage>;
+    main: ({ history }) => {
+      return <ProductActionPage history={history}></ProductActionPage>;
     },
   },
   {

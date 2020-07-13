@@ -16,3 +16,12 @@
     - render sẽ hiển thị 1 lần k có dữ liệu
     - sau khi componentDidMount chạy và có setState thì sẽ 
     được load lại 1 lần (dã có dữ liệu trong state)
+
+94-95 :  add sản phẩm thông qua hàm callapi(utils)
+    -  95 : add 1 đối tượng trong router của product/add
+    - object "History"  là đối tượng trong react-router
+    - history.goBack() là 1 hàm của object history có sẵn
+    - nó sẽ quay lại trang trước đó (ProductActionPage)
+    - history.push("/"); đi đến theo đường dẫn
+
+goi sever : json-server --watch db.json
