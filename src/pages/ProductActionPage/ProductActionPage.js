@@ -21,20 +21,54 @@ export default class ProductActionPage extends Component {
     });
   };
 
+  componentDidMount() {
+    var { match } = this.props;
+    if (match) {
+      var id = match.params.id;
+      // console.log(id);
+      callApi(`products/${id}`, "GET", null).then((res) => {
+        console.log(res.data);
+        var data = res.data;
+        this.setState({
+          id: data.id,
+          txtName: data.name,
+          txtPrice: data.price,
+          chkbStatus: data.status,
+        });
+      });
+    }
+  }
+
   onSave = (e) => {
     e.preventDefault();
-    var { txtName, txtPrice, chkbStatus } = this.state;
+    var { id, txtName, txtPrice, chkbStatus } = this.state;
     var { history } = this.props;
     // console.log(this.state);
-    callApi("products", "POST", {
-      name: txtName,
-      price: txtPrice,
-      status: chkbStatus,
-    }).then((res) => {
-      console.log(res);
-      history.goBack(); // c1
-      // history.push("/"); c2
-    });
+
+    if (id) {
+      //update
+      callApi(`products/${id}`, "PUT", {
+        name: txtName,
+        price: txtPrice,
+        status: chkbStatus,
+      }).then((res) => {
+        console.log(res);
+        history.goBack();
+      });
+
+      console.log("update");
+    } else {
+      // add
+      callApi("products", "POST", {
+        name: txtName,
+        price: txtPrice,
+        status: chkbStatus,
+      }).then((res) => {
+        console.log(res);
+        history.goBack(); // c1
+        // history.push("/"); c2
+      });
+    }
   };
 
   render() {
@@ -75,6 +109,7 @@ export default class ProductActionPage extends Component {
                 className="mr-3"
                 name="chkbStatus"
                 id=""
+                checked={chkbStatus}
               />
               Còn Hàng
             </label>

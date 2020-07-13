@@ -28,8 +28,11 @@ const routes = [
   {
     path: "/product/:id/edit",
     exact: false,
-    main: ({ match }) => {
-      return <ProductActionPage match={match}></ProductActionPage>;
+    // truyền match để lấy tham số trên url
+    main: ({ match, history }) => {
+      return (
+        <ProductActionPage match={match} history={history}></ProductActionPage>
+      );
     },
   },
 

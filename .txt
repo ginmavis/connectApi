@@ -34,6 +34,10 @@
             - Dùng findIndex để tìm index theo id(ProductListPage)
 
 98 : Cập nhật
-
+    - xử lý cập nhật trong ProductActionPage 
+    - thêm match và history trong router
+    - get params bằng match trong componentDidMount
+    - setState
+    
 
 goi sever : json-server --watch db.json
