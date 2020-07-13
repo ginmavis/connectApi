@@ -75,7 +75,6 @@ export default class ProductActionPage extends Component {
                 className="mr-3"
                 name="chkbStatus"
                 id=""
-                value="checkedValue"
               />
               Còn Hàng
             </label>

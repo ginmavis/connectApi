@@ -23,5 +23,17 @@
     - history.goBack() là 1 hàm của object history có sẵn
     - nó sẽ quay lại trang trước đó (ProductActionPage)
     - history.push("/"); đi đến theo đường dẫn
+96: xóa sản phẩm  :
+    - xử lý onDelete trong ProductActionPage 
+    - Truyền props từ ProductListPage sang ProductItem
+    - Khi xóa sẽ đc xóa trên sever (log res là thấy thông báo)
+    - nhưng client phải reset lại mới hiện thị đúng
+    - C1 : document.location.reload(true);
+    - C2 : để tối ưu hiệu suất của web 
+            - Xóa phần tử trong mảng product trên client thông qua ProductListPage 
+            - Dùng findIndex để tìm index theo id(ProductListPage)
+
+98 : Cập nhật
+
 
 goi sever : json-server --watch db.json
